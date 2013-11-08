@@ -30,7 +30,7 @@ function navigation(target) {
 function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
-	$('#overlayImageBlock').html("");
+	//$('#overlayImageBlock').html("");
 }
 
 /**
@@ -69,6 +69,12 @@ function changeScreen(title) {
 			left:'0px'
 		});
 	} else {
+
+		// anime menu to scroll out
+		$("#overlayImageBlock").animate({
+			left:'-500px'
+		});
+
 		// update image block with new image and map
 		$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
 	}
