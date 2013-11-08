@@ -14,24 +14,22 @@ function setup() {
 
 /**
 	Here's a hacky program that changes the image given a target
-	Input: target (String) - corresponds to the name of the map areas
+	Input: target (String) - corresponds to the name of the map area and image
 */
 function navigation(target) {
-	if (target == "loginButton") {
-		// login button takes the user to the homepage (main lobby)
-		changeScreen("mainLobby");
+	validTargets = ["mainLobby", "mainMenu"];
 
-	} else if (target == "register") {
-		// register button also takes the user to the homepage since we don't have a register page
-		changeScreen("mainLobby");
+	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
+		changeScreen(target);
 	}
 }
 
 /**
-	Remove any textfields or drop downs from the page
+	Remove any textfields or drop downs from the page and clear usemap
 */
 function clearPage() {
 	$('#textAreas').html("");
+	$('.img').attr('usemap', '');
 }
 
 /**
@@ -52,14 +50,19 @@ function setupPage(title) {
 	Input: title (String) - corresponds to the image name
 */
 function changeScreen(title) {
+	// build image url for image tag
+	imageUrl = "img/" + title + ".png";
 	// update textfields and dropdowns for new page
 	setupPage(title);
 
-	// build image url for image tag
-	imageUrl = "img/" + title + ".png";
-
-	// update image block with new image and map
-	$('#imageBlock').html("<img src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
+	if (title == "mainMenu") {
+		// load main menu into overlay block
+		//$('#overlayImageBlock').css();
+		$('#overlayImageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
+	} else {
+		// update image block with new image and map
+		$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
+	}
 }
 
 $(document).ready(function () {

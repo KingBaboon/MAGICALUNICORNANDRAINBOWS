@@ -4,6 +4,11 @@ body {
 
 #imageBlock{
 	width: 420px;
+	height: 747px;
+}
+
+#overlayImageBlock {
+	height: 747px;
 }
 
 div#imageBlock img{
