@@ -9,10 +9,16 @@ body {
 
 #overlayImageBlock {
 	height: 747px;
+	position: absolute;
+	top: 0px;
+	left: -500px;
+}
+div#overlayImageBlock img{
+	height: 747px;
 }
 
-div#imageBlock img{
-	width: 100%;
+div img{
+	height: 100%;
 }
 
 /**HACK HACK HACK**/

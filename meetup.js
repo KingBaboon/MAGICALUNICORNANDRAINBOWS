@@ -30,6 +30,7 @@ function navigation(target) {
 function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
+	$('#overlayImageBlock').html("");
 }
 
 /**
@@ -57,8 +58,16 @@ function changeScreen(title) {
 
 	if (title == "mainMenu") {
 		// load main menu into overlay block
-		//$('#overlayImageBlock').css();
-		$('#overlayImageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
+
+		// make sure menu is off screen initially
+		$('#overlayImageBlock').css('left', '-500px');
+		$('#overlayImageBlock').html("<img class='img' src = '" + imageUrl + "'>");
+		$('.img').attr('usemap', title);
+
+		// anime menu to scroll out
+		$("#overlayImageBlock").animate({
+			left:'0px'
+		});
 	} else {
 		// update image block with new image and map
 		$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
