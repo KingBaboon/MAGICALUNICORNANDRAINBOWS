@@ -3,7 +3,7 @@ body {
 }
 
 #imageBlock{
-	width: 500px;
+	width: 420px;
 }
 
 div#imageBlock img{
@@ -16,3 +16,26 @@ div#imageBlock img{
 	top: 0px;
 	right: 50px;
 }
+
+
+/** login page textareas **/
+div#textAreas #loginPageUsername {
+	height: 37px;
+	width: 375px;
+	font-size: 23px;
+
+	position: absolute;
+	left: 23px;
+	top: 340px;
+}
+
+div#textAreas #loginPagePassword {
+	height: 37px;
+	width: 375px;
+	font-size: 23px;
+
+	position: absolute;
+	left: 23px;
+	top: 428px;
+}
+

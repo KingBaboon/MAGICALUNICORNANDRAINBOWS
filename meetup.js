@@ -28,10 +28,33 @@ function navigation(target) {
 }
 
 /**
+	Remove any textfields or drop downs from the page
+*/
+function clearPage() {
+	$('#textAreas').html("");
+}
+
+/**
+	Clear content from previous page and add content necessary for current page
+*/
+function setupPage(title) {
+	// wipe out content from previous page
+	clearPage();
+
+	// login page needs two textboxes: username and password
+	if(title == "loginPage") {
+		$('#textAreas').html("<input id='loginPageUsername'><input type='password' id='loginPagePassword'>");
+	}
+}
+
+/**
 	Changes the image given a title
 	Input: title (String) - corresponds to the image name
 */
 function changeScreen(title) {
+	// update textfields and dropdowns for new page
+	setupPage(title);
+
 	// build image url for image tag
 	imageUrl = "img/" + title + ".png";
 
