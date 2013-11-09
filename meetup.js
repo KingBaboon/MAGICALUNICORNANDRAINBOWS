@@ -17,7 +17,8 @@ function setup() {
 	Input: target (String) - corresponds to the name of the map area and image
 */
 function navigation(target) {
-	validTargets = ["mainLobby", "mainMenu"];
+	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
+		"generalLobbyDropdown", "upcomingEventsDetailed"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
