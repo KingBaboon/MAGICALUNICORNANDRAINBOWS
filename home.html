@@ -19,10 +19,36 @@
 
 	<div id="overlayImageBlockRight"></div>
 
+	<div id="overlayImageBlockBottom">
+		<img id="filter-expand-img" src="img/filter-expand.png" usemap="filter-expand">
+		<div id="filter-content">
+			Activity:<br>
+
+			Start Time:<br>
+			<center>
+				<div id='filterTimeDrop'class='filterDropBox compressed'>Now</div>
+				<div id='filterTimeDropExtended' class='filterDropBoxExtended'>
+					<div class='filterDropBox extended topExtended'>Now</div>
+					<div class='filterDropBox extended'>12:00 PM</div>
+					<div class='filterDropBox extended bottomExtended'>1:00</div>
+				</div>
+			</center>
+
+			Location:<br>
+			<center>
+				<div id='filterLocationDrop' class='filterDropBox compressed'>Anywhere</div>
+				<div id='filterLocationDropExtended' class='filterDropBoxExtended'>
+					<div class='filterDropBox extended topExtended'>Now</div>
+					<div class='filterDropBox extended'>12:00 PM</div>
+					<div class='filterDropBox extended bottomExtended'>1:00</div>
+				</div>
+			</center>
+		</div>
+	</div>
+
 	<!-- a hack div that goes on top of the overlayImageBlockRight to hide it-->
 	<div id="hackHidingBlock"></div>
-
-	</div>
+	<div id="hackHidingBlock2"></div>
 
 	<div id="textAreas">
 		<input id='loginPageUsername'>
@@ -35,22 +61,26 @@
 		<area title="register" shape="rect" coords="27,618,200,657" href="#">
 	</map>
 
-	<!-- map for main lobby includes: mainMebu button, Lobby dropdown, join Event -->
+	<!-- map for main lobby includes: mainMebu button, Lobby dropdown, join Event, filter -->
 	<map name="mainLobby">
 		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
 		<area title="generalLobbyDropdown" shape="rect" coords="130, 50, 310, 76" href="#">
 		<area title="joinEventDialogue" shape="rect" coords="20, 195, 105, 276" href="#">
 		<area title="upcomingEvents" shape="rect" coords="374, 47, 414, 80" href="#">
 		<area title="newmeetup" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
 	</map>
 
 	<!-- map for mainMenu includes: outside of menu, Group, Account Settings, Help-->
 	<map name="mainMenu">
-		<area title="mainLobby" shape="rect" coords="338, 0, 421, 747" href="#">
 		<area title="searchGroups" shape="rect" coords="0, 100, 325, 173" href="#">
 		<area title="accountSettings" shape="rect" coords="0, 173, 325, 240" href="#">
 		<area title="meetupHistory" shape="rect" coords="0, 240, 325, 301" href="#">
 		<area title="loginPage" shape="rect" coords="0, 385, 325, 437" href="#">
+	</map>
+	<!-- map for mainLobby when main menu is open - closes main menu -->
+	<map name="exitMainMenu">
+		<area title="mainLobby" shape="rect" coords="328, 0, 421, 747" href="#">
 	</map>
 
 	<!-- map for joinEventDialogue includes: the X -->
@@ -90,11 +120,21 @@
 
 	<!-- map for upcomingEventDetails includes: back button -->
 	<map name="upcomingEvents">
+	</map>
+	<!-- map for mainLobby when upcoming events is open - closes upcoming events -->
+	<map name="exitUpcomingEvents">
 		<area title="mainLobby" shape="rect" coords="0, 0, 88, 746" href="#">
 	</map>
 
 	<map name="register">
 		<area title="mainLobby" shape="rect" coords="56, 658, 174, 695" href="#">
+	</map>
+
+	<!-- map for filter includes:  -->
+	<map name="filter-expand">
+	</map>
+	<map name="exitFilter-expand">
+		<area title="mainLobby" shape="rect" coords="0, 0, 420, 397" href="#">
 	</map>
 
 	<!-- debug delete this laterz -->

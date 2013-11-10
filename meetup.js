@@ -18,7 +18,7 @@ function setup() {
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
-		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory"];
+		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -31,6 +31,7 @@ function navigation(target) {
 function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
+	$('#filter-expand-img').attr('usemap', '');
 }
 
 /**
@@ -69,26 +70,26 @@ function changeScreen(title) {
 	setupPage(title);
 
 	if (title == "mainMenu") {
-		// load main menu into overlay block
+		// load main menu into left overlay block
 
 		// make sure menu is off screen initially
 		$('#overlayImageBlockLeft').css('left', '-500px');
 
-		$('#overlayImageBlockLeft').html("<img class='img' src = '" + imageUrl + "'>");
-		$('.img').attr('usemap', title);
-
+		$('.img').attr('usemap', 'exitMainMenu');
+		$('#overlayImageBlockLeft').html("<img class='img' src = '" + imageUrl + "' usemap='" + title + "'>");
+		
 		// anime menu to scroll out
 		$("#overlayImageBlockLeft").animate({
 			left:'0px'
 		});
 	} else if (title == "upcomingEvents") {
-		// load main menu into overlay block
+		// load upcoming events into right overlay block
 
 		// make sure menu is off screen initially
 		$('#overlayImageBlockRight').css('left', '420px');
 
-		$('#overlayImageBlockRight').html("<img class='img' src = '" + imageUrl + "'>");
-		$('.img').attr('usemap', title);
+		$('.img').attr('usemap', 'exitUpcomingEvents');
+		$('#overlayImageBlockRight').html("<img class='img' src = '" + imageUrl + "' usemap='" + title + "'>");
 
 		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
@@ -102,6 +103,19 @@ function changeScreen(title) {
 		
 		// pop out the side bar
 		changeScreen("upcomingEvents");
+	} else if (title == "filter-expand") {
+		// load expanded filter into bottom overlay block
+
+		// make sure menu is off screen initially
+		$('#overlayImageBlockBottom').css('top', '747px');
+
+		$('.img').attr('usemap', 'exitFilter-expand');
+		$('#filter-expand-img').attr('usemap', 'filter-expand');
+
+		// animate menu to scroll out
+		$("#overlayImageBlockBottom").animate({
+			top: '393px'
+		});
 
 	} else {
 		// animate menu to scroll out
@@ -111,6 +125,10 @@ function changeScreen(title) {
 
 		$("#overlayImageBlockLeft").animate({
 			left:'-500px'
+		});
+
+		$("#overlayImageBlockBottom").animate({
+			top: '747px'
 		});
 
 		// update image block with new image and map
@@ -123,6 +141,7 @@ function debugHilight() {
 	$('#imageBlock div').css('background-size','100%');
 }
 
+//Added initial filter stuff
 $(document).ready(function () {
 	setup();
 });

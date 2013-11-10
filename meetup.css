@@ -32,6 +32,57 @@ div#overlayImageBlockRight img{
 	height: 747px;
 }
 
+/** filter stuff*/
+#overlayImageBlockBottom {
+	position: absolute;
+	height: 354px;
+	top: 747px;
+	left: 0px;
+	width: 0px;
+}
+div#overlayImageBlockBottom img{
+	width: 420px;
+}
+
+#filter-content {
+	font-family: "myriad pro";
+	font-size: 20px;
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	padding: 30px;
+	width: 360px;
+}
+
+.filterDropBoxExtended {
+	display: none;
+}
+
+.filterDropBox {
+	background-color: grey;
+}
+
+.filterDropBox.topExtended {
+	border-top: 1px solid
+}
+
+.filterDropBox.bottomExtended {
+	padding-bottom: 6px;
+}
+
+.filterDropBox.extended {
+	padding-top: 11px;
+}
+
+.filterDropBox.compressed {
+	padding: 11px 11px 6px 11px;
+	background-image: url('http://i45.tinypic.com/309nb74.png'); 
+	background-repeat: no-repeat;
+	background-position: right 10px top 18px;
+}
+
+/** end of filter stuff*/
+
 div img{
 	height: 100%;
 }
@@ -53,6 +104,15 @@ div img{
 	background-color: white;
 	z-index: 1000;
 }
+#hackHidingBlock2 {
+	position: absolute;
+	width: 420px;
+	height: 500px;
+	top: 747px;
+	left: 0px;
+	background-color: white;
+}
+
 
 /**END OF THE HACKS**/
 
