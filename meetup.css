@@ -51,6 +51,7 @@ div img{
 	top: 0px;
 	left: 420px;
 	background-color: white;
+	z-index: 1000;
 }
 
 /**END OF THE HACKS**/

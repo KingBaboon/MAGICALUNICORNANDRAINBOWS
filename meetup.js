@@ -17,7 +17,8 @@ function setup() {
 */
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
-		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup", "loginPage"];
+		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
+		"accountSettings", "loginPage", "mainLobbyJoined"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -30,8 +31,6 @@ function navigation(target) {
 function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
-	//$('#overlayImageBlockLeft').html("");
-	//$('#overlayImageBlockRight').html("");
 }
 
 /**
@@ -48,7 +47,10 @@ function setupPage(title) {
 		$('#textAreas').html("<input id='groupName'><input id='groupDescription'>");
 	} else if (title == "register") {
 		$('#textAreas').html(
-			"<input id='registerPageEmail'><input id='registerPageUsername'><input type='password' id='registerPagePassword'><input type='password' id='registerPageConfirmPassword'>");
+			"<input id='registerPageEmail'>"+
+			"<input id='registerPageUsername'>"+
+			"<input type='password' id='registerPagePassword'>"+
+			"<input type='password' id='registerPageConfirmPassword'>");
 	} else if (title == "accountSettings") {
 		$('#textAreas').html("<input id='personalEmail'> "+
 							 "<input type='password' id='newPassword'> "+
@@ -92,6 +94,15 @@ function changeScreen(title) {
 		$("#overlayImageBlockRight").animate({
 			left: '90px'
 		});
+
+	} else if (title == "mainLobbyJoined") {
+
+		// change back to main lobby image
+		$('#imageBlock').html("<img class='img' src = 'img/mainLobby.png' usemap='#mainLobby'>");
+		
+		// pop out the side bar
+		changeScreen("upcomingEvents");
+
 	} else {
 		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
