@@ -49,6 +49,10 @@ function setupPage(title) {
 	} else if (title == "register") {
 		$('#textAreas').html(
 			"<input id='registerPageEmail'><input id='registerPageUsername'><input type='password' id='registerPagePassword'><input type='password' id='registerPageConfirmPassword'>");
+	} else if (title == "accountSettings") {
+		$('#textAreas').html("<input id='personalEmail'> "+
+							 "<input type='password' id='newPassword'> "+
+							 "<input type='password' id='confirmNewPassword'>");
 	}
 }
 

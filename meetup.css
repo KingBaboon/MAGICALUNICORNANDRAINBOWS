@@ -13,6 +13,7 @@ body {
 	margin-top: -747px;
 	left: -500px;
 	width: 0px;
+	z-index: 1;
 }
 div#overlayImageBlockLeft img{
 	height: 747px;
@@ -25,6 +26,7 @@ div#overlayImageBlockLeft img{
 	margin-top: -745px;
 	left: 420px;
 	width: 0px;
+	z-index: 1;
 }
 div#overlayImageBlockRight img{
 	height: 747px;
@@ -75,6 +77,7 @@ div#textAreas #loginPagePassword {
 	top: 428px;
 }
 
+/** createGroup page textareas **/
 div#textAreas #groupName {
 	height: 30px;
 	width: 370px;
@@ -132,5 +135,39 @@ div#textAreas #registerPageConfirmPassword {
 	position: absolute;
 	left: 57px;
 	top: 577px;
+}
+	
+/** accountSettings page textareas **/
+div#textAreas #personalEmail {
+	height: 30px;
+	width: 369px;
+	font-size: 23px;
+	border: none;
+
+	position: absolute;
+	left: 25px;
+	top: 267px;
+}
+
+div#textAreas #newPassword {
+	height: 30px;
+	width: 369px;
+	font-size: 23px;
+	border: none;
+
+	position: absolute;
+	left: 25px;
+	top: 348px;
+}
+
+div#textAreas #confirmNewPassword {
+	height: 30px;
+	width: 369px;
+	font-size: 23px;
+	border: none;
+	
+	position: absolute;
+	left: 25px;
+	top: 420px;
 }
 
