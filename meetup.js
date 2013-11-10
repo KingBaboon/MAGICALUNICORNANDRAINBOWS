@@ -19,7 +19,7 @@ function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
-		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2"];
+		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -53,9 +53,10 @@ function setupPage(title) {
 			"<input id='registerPageUsername'>"+
 			"<input type='password' id='registerPagePassword'>"+
 			"<input type='password' id='registerPageConfirmPassword'>");
-	} else if (title == "groupinfo" || title == "searchGroups") {
+	} else if (title == "groupinfo" || title == "searchGroups" || title == "mygroups" ) {
+		value = (title != "mygroups") ? "value='girls'" : "";
 		$('#textAreas').html("<input id='groupSearchBar'" + 
-			"value='girls'"
+			value
 			+ "placeholder='Search for a group...'>");
 	} else if (title == "accountSettings") {
 		$('#textAreas').html("<input id='personalEmail'> "+
