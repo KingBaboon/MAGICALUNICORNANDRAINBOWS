@@ -8,7 +8,6 @@ function setup() {
 		// target is the name of the map area you clicked on
 		target = event.target.title;
 		navigation(target);
-		
 	})
 }
 
@@ -18,8 +17,7 @@ function setup() {
 */
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
-		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups",
-		"accountSettings", "loginPage"];
+		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup", "loginPage"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
