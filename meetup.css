@@ -97,3 +97,40 @@ div#textAreas #groupDescription {
 	top: 255px;
 }
 
+/** register page textareas **/
+div#textAreas #registerPageUsername {
+	height: 33px;
+	width: 328px;
+	font-size: 23px;
+	position: absolute;
+	left: 57px;
+	top: 440px;
+}
+
+div#textAreas #registerPageEmail {
+	height: 33px;
+	width: 328px;
+	font-size: 23px;
+	position: absolute;
+	left: 57px;
+	top: 374px;
+}
+
+div#textAreas #registerPagePassword {
+	height: 33px;
+	width: 328px;
+	font-size: 23px;
+	position: absolute;
+	left: 57px;
+	top: 510px;
+}
+
+div#textAreas #registerPageConfirmPassword {
+	height: 33px;
+	width: 328px;
+	font-size: 23px;
+	position: absolute;
+	left: 57px;
+	top: 577px;
+}
+

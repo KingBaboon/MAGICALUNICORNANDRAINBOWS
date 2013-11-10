@@ -19,7 +19,7 @@ function setup() {
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups",
-		"accountSettings"];
+		"accountSettings", "loginPage"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -48,6 +48,9 @@ function setupPage(title) {
 		$('#textAreas').html("<input id='loginPageUsername'><input type='password' id='loginPagePassword'>");
 	} else if (title == "createGroup") {
 		$('#textAreas').html("<input id='groupName'><input id='groupDescription'>");
+	} else if (title == "register") {
+		$('#textAreas').html(
+			"<input id='registerPageEmail'><input id='registerPageUsername'><input type='password' id='registerPagePassword'><input type='password' id='registerPageConfirmPassword'>");
 	}
 }
 
