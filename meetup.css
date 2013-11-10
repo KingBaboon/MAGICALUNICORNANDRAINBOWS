@@ -108,6 +108,7 @@ div img{
 
 /**this div hides the overflow on the right side of the window*/
 #hackHidingBlock {
+	border-left: 1px solid;
 	position: absolute;
 	width: 500px;
 	height: 750px;
@@ -117,6 +118,7 @@ div img{
 	z-index: 1000;
 }
 #hackHidingBlock2 {
+	border-top: 1px solid;
 	position: absolute;
 	width: 420px;
 	height: 500px;
