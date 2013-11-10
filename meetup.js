@@ -32,7 +32,7 @@ function navigation(target) {
 function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
-	//$('#overlayImageBlock').html("");
+	//$('#overlayImageBlockLeft').html("");
 	//$('#overlayImageBlockRight').html("");
 }
 
@@ -63,39 +63,35 @@ function changeScreen(title) {
 		// load main menu into overlay block
 
 		// make sure menu is off screen initially
-		//$('#overlayImageBlock').css('left', '-500px');
-		$('#overlayImageBlock').html("<img class='img' src = '" + imageUrl + "'>");
+		$('#overlayImageBlockLeft').css('left', '-500px');
+
+		$('#overlayImageBlockLeft').html("<img class='img' src = '" + imageUrl + "'>");
 		$('.img').attr('usemap', title);
 
 		// anime menu to scroll out
-		$("#overlayImageBlock").animate({
+		$("#overlayImageBlockLeft").animate({
 			left:'0px'
 		});
 	} else if (title == "upcomingEvents") {
 		// load main menu into overlay block
 
 		// make sure menu is off screen initially
-		//$('#overlayImageBlockRight').css('right', '-500px');
+		$('#overlayImageBlockRight').css('left', '420px');
+
 		$('#overlayImageBlockRight').html("<img class='img' src = '" + imageUrl + "'>");
 		$('.img').attr('usemap', title);
 
-		// anime menu to scroll out
+		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
-			width:'338px'
+			left: '90px'
 		});
 	} else {
-		// anime menu to scroll out
+		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
-			right:'990px',
-			width: '0px'
-		}, { complete:function() {
-				$(this).html("");
-			}
+			left: '420px'
 		});
-		
-		//$('#overlayImageBlockRight').html("");
 
-		$("#overlayImageBlock").animate({
+		$("#overlayImageBlockLeft").animate({
 			left:'-500px'
 		});
 

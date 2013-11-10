@@ -7,23 +7,24 @@ body {
 	height: 747px;
 }
 
-#overlayImageBlock {
+#overlayImageBlockLeft {
 	height: 747px;
-	position: absolute;
-	top: 0px;
+	position: relative;
+	margin-top: -747px;
 	left: -500px;
+	width: 0px;
 }
-div#overlayImageBlock img{
+div#overlayImageBlockLeft img{
 	height: 747px;
 }
 
 
 #overlayImageBlockRight {
 	height: 747px;
-	position: absolute;
-	top: 0px;
+	position: relative;
+	margin-top: -745px;
+	left: 420px;
 	width: 0px;
-	right: 990px;
 }
 div#overlayImageBlockRight img{
 	height: 747px;
@@ -39,6 +40,18 @@ div img{
 	top: 0px;
 	right: 50px;
 }
+
+/**this div hides the overflow on the right side of the window*/
+#hackHidingBlock {
+	position: absolute;
+	width: 500px;
+	height: 750px;
+	top: 0px;
+	left: 420px;
+	background-color: white;
+}
+
+/**END OF THE HACKS**/
 
 
 /** login page textareas **/
