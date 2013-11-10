@@ -18,7 +18,7 @@ function setup() {
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
-		"accountSettings", "loginPage", "mainLobbyJoined"];
+		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
