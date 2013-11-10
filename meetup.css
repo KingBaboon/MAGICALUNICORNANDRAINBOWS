@@ -17,6 +17,18 @@ div#overlayImageBlock img{
 	height: 747px;
 }
 
+
+#overlayImageBlockRight {
+	height: 747px;
+	position: absolute;
+	top: 0px;
+	width: 0px;
+	right: 990px;
+}
+div#overlayImageBlockRight img{
+	height: 747px;
+}
+
 div img{
 	height: 100%;
 }

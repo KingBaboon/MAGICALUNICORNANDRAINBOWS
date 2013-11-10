@@ -18,7 +18,8 @@ function setup() {
 */
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
-		"generalLobbyDropdown", "upcomingEventsDetailed"];
+		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups",
+		"accountSettings"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -32,6 +33,7 @@ function clearPage() {
 	$('#textAreas').html("");
 	$('.img').attr('usemap', '');
 	//$('#overlayImageBlock').html("");
+	//$('#overlayImageBlockRight').html("");
 }
 
 /**
@@ -61,7 +63,7 @@ function changeScreen(title) {
 		// load main menu into overlay block
 
 		// make sure menu is off screen initially
-		$('#overlayImageBlock').css('left', '-500px');
+		//$('#overlayImageBlock').css('left', '-500px');
 		$('#overlayImageBlock').html("<img class='img' src = '" + imageUrl + "'>");
 		$('.img').attr('usemap', title);
 
@@ -69,9 +71,30 @@ function changeScreen(title) {
 		$("#overlayImageBlock").animate({
 			left:'0px'
 		});
-	} else {
+	} else if (title == "upcomingEvents") {
+		// load main menu into overlay block
+
+		// make sure menu is off screen initially
+		//$('#overlayImageBlockRight').css('right', '-500px');
+		$('#overlayImageBlockRight').html("<img class='img' src = '" + imageUrl + "'>");
+		$('.img').attr('usemap', title);
 
 		// anime menu to scroll out
+		$("#overlayImageBlockRight").animate({
+			width:'338px'
+		});
+	} else {
+		// anime menu to scroll out
+		$("#overlayImageBlockRight").animate({
+			right:'990px',
+			width: '0px'
+		}, { complete:function() {
+				$(this).html("");
+			}
+		});
+		
+		//$('#overlayImageBlockRight').html("");
+
 		$("#overlayImageBlock").animate({
 			left:'-500px'
 		});
