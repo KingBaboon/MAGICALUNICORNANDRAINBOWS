@@ -46,7 +46,7 @@ function setupPage(title) {
 	if (title == "loginPage") {
 		$('#textAreas').html("<input id='loginPageUsername'><input type='password' id='loginPagePassword'>");
 	} else if (title == "createGroup") {
-		$('#textAreas').html("<input id='groupName'><input id='groupDescription'>");
+		$('#textAreas').html("<input id='groupName'><textarea maxlength='50' id='groupDescription'>");
 	} else if (title == "register") {
 		$('#textAreas').html(
 			"<input id='registerPageEmail'>"+

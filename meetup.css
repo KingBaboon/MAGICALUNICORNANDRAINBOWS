@@ -163,11 +163,12 @@ div#textAreas #groupName {
 }
 
 div#textAreas #groupDescription {
-	height: 30px;
+	height: 65px;
 	width: 370px;
 	font-size: 23px;
 	border: none;
-
+	font-family: "myriad pro";
+	
 	position: absolute;
 	left: 25px;
 	top: 255px;
