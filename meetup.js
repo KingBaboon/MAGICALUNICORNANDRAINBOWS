@@ -18,7 +18,9 @@ function setup() {
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
-		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo"];
+		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
+		"filterTimeDrop", "filterLocationDrop"];
+
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -68,6 +70,34 @@ function setupPage(title) {
 	Input: title (String) - corresponds to the image name
 */
 function changeScreen(title) {
+	if (title == "filterTimeDrop") {
+		if ($('#filterTimeDropExtended').css('display') == 'block') 
+			$('#filterTimeDropExtended').css('display', 'none');
+		else {
+			$('#filterTimeDropExtended').css('height', '0px');
+			$('#filterTimeDropExtended').css('display', 'block');
+
+			$('#filterTimeDropExtended').animate({
+				height: '112px'
+			});
+			$('#filterLocationDropExtended').css('display', 'none');
+		}
+		return;
+	} else if (title == "filterLocationDrop") {
+		if ($('#filterLocationDropExtended').css('display') == 'block')
+			$('#filterLocationDropExtended').css('display', 'none');
+		else {
+			$('#filterLocationDropExtended').css('height', '0px');
+			$('#filterLocationDropExtended').css('display', 'block');
+		
+			$('#filterLocationDropExtended').animate({
+				height: '112px'
+			});
+			$('#filterTimeDropExtended').css('display', 'none');
+		}
+		return;
+	}
+
 	// build image url for image tag
 	imageUrl = "img/" + title + ".png";
 	// update textfields and dropdowns for new page

@@ -45,13 +45,24 @@ div#overlayImageBlockBottom img{
 }
 
 #filter-content {
+	color: #6a6a6a;
 	font-family: "myriad pro";
 	font-size: 20px;
 	position: absolute;
-	top: 40px;
+	top: 30px;
 	left: 0px;
 	padding: 30px;
 	width: 360px;
+}
+
+.filterLabel {
+	padding-bottom: 4px;
+	padding-top: 10px;
+}
+
+#activityToggle {
+	height: 40px;
+	width: 250px !important;
 }
 
 .filterDropBoxExtended {
@@ -59,14 +70,16 @@ div#overlayImageBlockBottom img{
 }
 
 .filterDropBox {
-	background-color: grey;
+	background-color: #dedede;
 }
 
 .filterDropBox.topExtended {
+	color: #c0c0c0;
 	border-top: 1px solid
 }
 
 .filterDropBox.bottomExtended {
+	color: #c0c0c0;
 	padding-bottom: 6px;
 }
 

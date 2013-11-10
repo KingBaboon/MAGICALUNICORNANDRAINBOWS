@@ -22,11 +22,14 @@
 	<div id="overlayImageBlockBottom">
 		<img id="filter-expand-img" src="img/filter-expand.png" usemap="filter-expand">
 		<div id="filter-content">
-			Activity:<br>
-
-			Start Time:<br>
+			<div class="filterLabel">Activity:</div>
 			<center>
-				<div id='filterTimeDrop'class='filterDropBox compressed'>Now</div>
+				<img id='activityToggle' src='img/all-pressed.png'>
+			</center>
+			
+			<div class="filterLabel">Start Time:</div>
+			<center>
+				<div id='filterTimeDrop' title='filterTimeDrop' class='filterDropBox compressed'>Now</div>
 				<div id='filterTimeDropExtended' class='filterDropBoxExtended'>
 					<div class='filterDropBox extended topExtended'>Now</div>
 					<div class='filterDropBox extended'>12:00 PM</div>
@@ -34,9 +37,9 @@
 				</div>
 			</center>
 
-			Location:<br>
+			<div class="filterLabel">Location:</div>
 			<center>
-				<div id='filterLocationDrop' class='filterDropBox compressed'>Anywhere</div>
+				<div id='filterLocationDrop' title='filterLocationDrop' class='filterDropBox compressed'>Anywhere</div>
 				<div id='filterLocationDropExtended' class='filterDropBoxExtended'>
 					<div class='filterDropBox extended topExtended'>Now</div>
 					<div class='filterDropBox extended'>12:00 PM</div>
@@ -144,7 +147,6 @@
 	<map name="exitFilter-expand">
 		<area title="mainLobby" shape="rect" coords="0, 0, 420, 397" href="#">
 	</map>
-
 	<!-- debug delete this laterz -->
 	<div id="debug"></div>
 
