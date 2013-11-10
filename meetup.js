@@ -104,6 +104,11 @@ function changeScreen(title) {
 	}
 }
 
+function debugHilight() {
+	$('.img').maphilight({alwaysOn:true})
+	$('.img').css('background-size','100% 100%');;
+}
+
 $(document).ready(function () {
 	setup();
 });
