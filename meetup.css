@@ -75,3 +75,25 @@ div#textAreas #loginPagePassword {
 	top: 428px;
 }
 
+div#textAreas #groupName {
+	height: 30px;
+	width: 370px;
+	font-size: 23px;
+	border: none;
+
+	position: absolute;
+	left: 25px;
+	top: 170px;
+}
+
+div#textAreas #groupDescription {
+	height: 30px;
+	width: 370px;
+	font-size: 23px;
+	border: none;
+
+	position: absolute;
+	left: 25px;
+	top: 255px;
+}
+

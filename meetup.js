@@ -23,7 +23,7 @@ function navigation(target) {
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
-	}
+	} 
 }
 
 /**
@@ -44,8 +44,10 @@ function setupPage(title) {
 	clearPage();
 
 	// login page needs two textboxes: username and password
-	if(title == "loginPage") {
+	if (title == "loginPage") {
 		$('#textAreas').html("<input id='loginPageUsername'><input type='password' id='loginPagePassword'>");
+	} else if (title == "createGroup") {
+		$('#textAreas').html("<input id='groupName'><input id='groupDescription'>");
 	}
 }
 
@@ -101,8 +103,8 @@ function changeScreen(title) {
 }
 
 function debugHilight() {
-	$('.img').maphilight({alwaysOn:true})
-	$('.img').css('background-size','100% 100%');;
+	$('img[usemap]').maphilight({alwaysOn:true});
+	$('#imageBlock div').css('background-size','100%');
 }
 
 $(document).ready(function () {
