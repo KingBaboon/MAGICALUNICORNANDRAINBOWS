@@ -232,3 +232,15 @@ div#textAreas #confirmNewPassword {
 	top: 420px;
 }
 
+div#textAreas #groupSearchBar {
+	height: 29px;
+	width: 250px;
+	font-size: 18px;
+	border: none;
+	padding: 5px;
+
+	position: absolute;
+	left: 78px;
+	top: 117px;
+}
+

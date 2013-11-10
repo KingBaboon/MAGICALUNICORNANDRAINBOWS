@@ -18,7 +18,7 @@ function setup() {
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
-		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand"];
+		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -52,6 +52,10 @@ function setupPage(title) {
 			"<input id='registerPageUsername'>"+
 			"<input type='password' id='registerPagePassword'>"+
 			"<input type='password' id='registerPageConfirmPassword'>");
+	} else if (title == "groupinfo" || title == "searchGroups") {
+		$('#textAreas').html("<input id='groupSearchBar'" + 
+			"value='girls'"
+			+ "placeholder='Search for a group...'>");
 	} else if (title == "accountSettings") {
 		$('#textAreas').html("<input id='personalEmail'> "+
 							 "<input type='password' id='newPassword'> "+
