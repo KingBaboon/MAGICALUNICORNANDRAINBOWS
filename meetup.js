@@ -19,7 +19,8 @@ function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
-		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups"];
+		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
+		"mainLobbyHighLighted"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
