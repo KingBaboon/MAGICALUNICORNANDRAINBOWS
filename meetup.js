@@ -20,7 +20,7 @@ function navigation(target) {
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
-		"mainLobbyHighLighted"];
+		"mainLobbyHighLighted","proto-newmeetup-presslunch","proto-newmeetup-pressbeer"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
