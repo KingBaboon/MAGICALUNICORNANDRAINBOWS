@@ -17,10 +17,10 @@ function setup() {
 */
 function navigation(target) {
 	validTargets = ["mainLobby", "mainMenu", "joinEventDialogue", "createGroup", "accountSettings", 
-		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
+		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "generalnewcoffee",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
-		"mainLobbyHighLighted","proto-newmeetup-presslunch","proto-newmeetup-pressbeer", "all-pressed",
+		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed",
 		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
