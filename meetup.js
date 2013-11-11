@@ -21,7 +21,7 @@ function navigation(target) {
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
 		"mainLobbyHighLighted","proto-newmeetup-presslunch","proto-newmeetup-pressbeer", "all-pressed",
-		"lunch-pressed", "coffee-pressed"];
+		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -72,14 +72,19 @@ function setupPage(title) {
 	Input: title (String) - corresponds to the image name
 */
 function changeScreen(title) {
+	// tapping areas within the filter modify the filter, they do not navigate to other pages
 	if (title == "all-pressed" || title == "lunch-pressed" || title == "coffee-pressed") {
+		// handles toggle for all, lunch and coffee
 		imgUrl = "img/" + title + ".png";
 		$('#activityToggle').attr('src', imgUrl);
 		return;
 	} else if (title == "filterTimeDrop") {
-		if ($('#filterTimeDropExtended').css('display') == 'block') 
+		// handles toggle for time drop down menu
+		// to setup for the filter screen, opening the time menu always sets the time to 3:00 PM
+		if ($('#filterTimeDropExtended').css('display') == 'block') {
 			$('#filterTimeDropExtended').css('display', 'none');
-		else {
+			$('#filterTimeDrop').text("3:00 PM");
+		} else {
 			$('#filterTimeDropExtended').css('height', '0px');
 			$('#filterTimeDropExtended').css('display', 'block');
 
@@ -90,6 +95,7 @@ function changeScreen(title) {
 		}
 		return;
 	} else if (title == "filterLocationDrop") {
+		// handles toggle for location drop down menu
 		if ($('#filterLocationDropExtended').css('display') == 'block')
 			$('#filterLocationDropExtended').css('display', 'none');
 		else {
@@ -157,6 +163,18 @@ function changeScreen(title) {
 			top: '393px'
 		});
 
+	} else if (title == "mainLobbyWFilter" ){
+		$("#overlayImageBlockBottom").animate({
+			top: '747px'
+		});
+
+		// if filter was updated to 3:00 PM, go to mainLobbyWFilter
+		// otherwise go to the regular main lobby
+		if ($('#filterTimeDrop').text() == "3:00 PM") {
+			$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + 'mainLobby' + "'>");
+		} else {
+			$('#imageBlock').html("<img class='img' src = 'img/mainLobby.png' usemap='mainLobby'>");
+		}
 	} else {
 		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
