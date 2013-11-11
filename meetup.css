@@ -38,6 +38,7 @@ div#overlayImageBlockRight img{
 	top: 747px;
 	left: 0px;
 	width: 0px;
+	z-index: 1;
 }
 div#overlayImageBlockBottom img{
 	width: 420px;
@@ -50,7 +51,7 @@ div#overlayImageBlockBottom img{
 	position: absolute;
 	top: 30px;
 	left: 0px;
-	padding: 30px;
+	margin: 30px;
 	width: 360px;
 }
 
@@ -125,6 +126,7 @@ div img{
 	top: 747px;
 	left: 0px;
 	background-color: white;
+	z-index: 1000;
 }
 
 
