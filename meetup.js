@@ -20,8 +20,9 @@ function navigation(target) {
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "generalnewcoffee",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
-		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed",
-		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter"];
+		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed", "returnToLobby",
+		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter", "girlsclublobby", "girlsnewcoffee",
+		"girlsnewlunch", "girlsnewbeer"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -145,7 +146,7 @@ function changeScreen(title) {
 	} else if (title == "mainLobbyJoined") {
 
 		// change back to main lobby image
-		$('#imageBlock').html("<img class='img' src = 'img/mainLobby.png' usemap='#mainLobby'>");
+		$('#imageBlock').html("<img id='backgroundImage' class='img' src='img/mainLobby.png' usemap='#mainLobby'>");
 		
 		// pop out the side bar
 		changeScreen("upcomingEvents");
@@ -171,10 +172,28 @@ function changeScreen(title) {
 		// if filter was updated to 3:00 PM, go to mainLobbyWFilter
 		// otherwise go to the regular main lobby
 		if ($('#filterTimeDrop').text() == "3:00 PM") {
-			$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + 'mainLobby' + "'>");
+			$('#imageBlock').html("<img id='backgroundImage' class='img' src = '" + imageUrl + "' usemap='" + "#" + 'mainLobby' + "'>");
 		} else {
-			$('#imageBlock').html("<img class='img' src = 'img/mainLobby.png' usemap='mainLobby'>");
+			$('#imageBlock').html("<img id='backgroundImage' class='img' src = 'img/mainLobby.png' usemap='mainLobby'>");
 		}
+	} else if (title == "returnToLobby") {
+		// when the menu is opened from another lobby (girl's lobby) we want to return to that lobby
+		if ($('#backgroundImage').attr('src') == "img/girlsclublobby.png") {
+			title = "girlsclublobby";
+		} else {
+			title = "mainLobby"
+		}
+
+		$("#overlayImageBlockRight").animate({
+			left: '420px'
+		});
+
+		$("#overlayImageBlockLeft").animate({
+			left:'-500px'
+		});
+
+		imageUrl = "img/" + title + ".png";
+		$('#imageBlock').html("<img id='backgroundImage' class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
 	} else {
 		// animate menu to scroll out
 		$("#overlayImageBlockRight").animate({
@@ -190,7 +209,7 @@ function changeScreen(title) {
 		});
 
 		// update image block with new image and map
-		$('#imageBlock').html("<img class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
+		$('#imageBlock').html("<img id='backgroundImage' class='img' src = '" + imageUrl + "' usemap='" + "#" + title + "'>");
 	}
 }
 

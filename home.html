@@ -12,7 +12,7 @@
 	<body>
 
 	<div id="imageBlock">
-		<img class="img" src="img/loginPage.png" width="420", height="747" usemap="#loginPage">
+		<img id="backgroundImage" class="img" src="img/loginPage.png" width="420", height="747" usemap="#loginPage">
 	</div>
 
 	<div id="overlayImageBlockLeft"></div>
@@ -74,6 +74,15 @@
 		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
 	</map>
 
+	<!-- map for girls lobby -->
+	<map name="girlsclublobby">
+		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
+		<area title="generalLobbyDropdown" shape="rect" coords="130, 50, 310, 76" href="#">
+		<area title="upcomingEvents" shape="rect" coords="374, 47, 414, 80" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
+	</map>
+
 	<map name="mainLobbyHighLighted">
 		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
 		<area title="generalLobbyDropdown" shape="rect" coords="130, 50, 310, 76" href="#">
@@ -84,7 +93,7 @@
 	</map>
 
 	<map name="generalLobbyDropdown">
-		<area title="mygroups" shape="rect" coords="121, 84, 311, 203" href="#"> 
+		<area title="girlsclublobby" shape="rect" coords="121, 84, 311, 114" href="#"> 
 		<area title="mainLobby" shape="rect" coords="0, 0, 420, 750" href="#">
 	</map>
 
@@ -98,7 +107,7 @@
 	
 	<!-- map for mainLobby when main menu is open - closes main menu -->
 	<map name="exitMainMenu">
-		<area title="mainLobby" shape="rect" coords="324, 0, 421, 747" href="#">
+		<area title="returnToLobby" shape="rect" coords="324, 0, 421, 747" href="#">
 	</map>
 
 	<!-- map for joinEventDialogue includes: the X -->
@@ -156,6 +165,28 @@
 		<area title="generalnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
 		<area title="generalnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
 	</map>
+
+	<!-- map for newmeetup in girls club includes: submit button and close button -->
+	<map name="girlsnewcoffee">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
+		<area title="girlsnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="girlsnewlunch">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="girlsnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="girlsnewbeer">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="girlsnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
+	</map>
 	
 	<!-- map for accountsettings includes: save button and text areas -->
 	<map name="accountSettings">
@@ -176,7 +207,7 @@
 	
 	<!-- map for mainLobby when upcoming events is open - closes upcoming events -->
 	<map name="exitUpcomingEvents">
-		<area title="mainLobby" shape="rect" coords="0, 0, 88, 746" href="#">
+		<area title="returnToLobby" shape="rect" coords="0, 0, 88, 746" href="#">
 	</map>
 
 	<map name="register">
