@@ -22,7 +22,7 @@ function navigation(target) {
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
 		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed", "returnToLobby",
 		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter", "girlsclublobby", "girlsnewcoffee",
-		"girlsnewlunch", "girlsnewbeer"];
+		"girlsnewlunch", "girlsnewbeer", "girlsclublobby-dropdown"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
