@@ -20,7 +20,8 @@ function navigation(target) {
 		"generalLobbyDropdown", "upcomingEvents", "register", "searchGroups", "newmeetup",
 		"accountSettings", "loginPage", "mainLobbyJoined", "meetupHistory", "filter-expand", "groupinfo",
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
-		"mainLobbyHighLighted","proto-newmeetup-presslunch","proto-newmeetup-pressbeer"];
+		"mainLobbyHighLighted","proto-newmeetup-presslunch","proto-newmeetup-pressbeer", "all-pressed",
+		"lunch-pressed", "coffee-pressed"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -71,7 +72,11 @@ function setupPage(title) {
 	Input: title (String) - corresponds to the image name
 */
 function changeScreen(title) {
-	if (title == "filterTimeDrop") {
+	if (title == "all-pressed" || title == "lunch-pressed" || title == "coffee-pressed") {
+		imgUrl = "img/" + title + ".png";
+		$('#activityToggle').attr('src', imgUrl);
+		return;
+	} else if (title == "filterTimeDrop") {
 		if ($('#filterTimeDropExtended').css('display') == 'block') 
 			$('#filterTimeDropExtended').css('display', 'none');
 		else {
