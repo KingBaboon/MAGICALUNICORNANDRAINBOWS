@@ -22,7 +22,7 @@ function navigation(target) {
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
 		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed", "returnToLobby",
 		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter", "girlsclublobby", "girlsnewcoffee",
-		"girlsnewlunch", "girlsnewbeer", "girlsclublobby-dropdown", "upcoming-popup-3"];
+		"girlsnewlunch", "girlsnewbeer", "girlsclublobby-dropdown", "upcoming-popup-3", "upcoming-newlyjoined"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -129,7 +129,7 @@ function changeScreen(title) {
 		$("#overlayImageBlockLeft").animate({
 			left:'0px'
 		});
-	} else if (title == "upcomingEvents") {
+	} else if (title == "upcomingEvents" || title == "upcoming-newlyjoined") {
 		// load upcoming events into right overlay block
 
 		// make sure menu is off screen initially
@@ -149,7 +149,8 @@ function changeScreen(title) {
 		$('#imageBlock').html("<img id='backgroundImage' class='img' src='img/mainLobby.png' usemap='#mainLobby'>");
 		
 		// pop out the side bar
-		changeScreen("upcomingEvents");
+		changeScreen("upcoming-newlyjoined");
+
 	} else if (title == "filter-expand") {
 		// load expanded filter into bottom overlay block
 
