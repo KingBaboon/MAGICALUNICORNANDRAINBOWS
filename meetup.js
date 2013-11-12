@@ -22,7 +22,8 @@ function navigation(target) {
 		"filterTimeDrop", "filterLocationDrop", "upcoming-popup", "upcoming-popup-2", "mygroups",
 		"mainLobbyHighLighted","generalnewlunch","generalnewbeer", "all-pressed", "returnToLobby",
 		"lunch-pressed", "coffee-pressed", "mainLobbyWFilter", "girlsclublobby", "girlsnewcoffee",
-		"girlsnewlunch", "girlsnewbeer", "girlsclublobby-dropdown", "upcoming-popup-3", "upcoming-newlyjoined", "chat"];
+		"girlsnewlunch", "girlsnewbeer", "girlsclublobby-dropdown", "upcoming-popup-3", "upcoming-newlyjoined", "chat", 
+		"joinedgirlsclub", "joinEventNightTime"];
 
 	if ($.inArray(target, validTargets)!= -1 && target.length != 0){
 		changeScreen(target);
@@ -56,7 +57,7 @@ function setupPage(title) {
 			"<input id='registerPageUsername'>"+
 			"<input type='password' id='registerPagePassword'>"+
 			"<input type='password' id='registerPageConfirmPassword'>");
-	} else if (title == "groupinfo" || title == "searchGroups" || title == "mygroups" ) {
+	} else if (title == "groupinfo" || title == "searchGroups" || title == "mygroups" || title == "joinedgirlsclub") {
 		value = (title != "mygroups") ? "value='girls'" : "";
 		$('#textAreas').html("<input id='groupSearchBar'" + 
 			value
