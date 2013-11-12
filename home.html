@@ -12,17 +12,46 @@
 	<body>
 
 	<div id="imageBlock">
-		<img class="img" src="img/loginPage.png" width="420", height="747" usemap="#loginPage">
+		<img id="backgroundImage" class="img" src="img/loginPage.png" width="420", height="747" usemap="#loginPage">
 	</div>
 
 	<div id="overlayImageBlockLeft"></div>
 
 	<div id="overlayImageBlockRight"></div>
 
+	<div id="overlayImageBlockBottom">
+		<img id="filter-expand-img" src="img/filter-expand.png">
+		<div id="filter-content">
+			<div class="filterLabel">Activity:</div>
+			<center>
+				<img id='activityToggle' src='img/all-pressed.png' usemap='filterActivityToggle'>
+			</center>
+			
+			<div class="filterLabel">Start Time:</div>
+			<center>
+				<div id='filterTimeDrop' title='filterTimeDrop' class='filterDropBox compressed'>Now</div>
+				<div id='filterTimeDropExtended' class='filterDropBoxExtended'>
+					<div class='filterDropBox extended topExtended'>Now</div>
+					<div class='filterDropBox extended'>12:00 PM</div>
+					<div class='filterDropBox extended bottomExtended'>1:00</div>
+				</div>
+			</center>
+
+			<div class="filterLabel">Location:</div>
+			<center>
+				<div id='filterLocationDrop' title='filterLocationDrop' class='filterDropBox compressed'>Anywhere</div>
+				<div id='filterLocationDropExtended' class='filterDropBoxExtended'>
+					<div class='filterDropBox extended topExtended'>Anywhere</div>
+					<div class='filterDropBox extended'>Irving K. Barber</div>
+					<div class='filterDropBox extended bottomExtended'>Abdul Ladha</div>
+				</div>
+			</center>
+		</div>
+	</div>
+
 	<!-- a hack div that goes on top of the overlayImageBlockRight to hide it-->
 	<div id="hackHidingBlock"></div>
-
-	</div>
+	<div id="hackHidingBlock2"></div>
 
 	<div id="textAreas">
 		<input id='loginPageUsername'>
@@ -35,22 +64,55 @@
 		<area title="register" shape="rect" coords="27,618,200,657" href="#">
 	</map>
 
-	<!-- map for main lobby includes: mainMebu button, Lobby dropdown, join Event -->
+	<!-- map for main lobby includes: mainMebu button, Lobby dropdown, join Event, filter -->
 	<map name="mainLobby">
 		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
 		<area title="generalLobbyDropdown" shape="rect" coords="130, 50, 310, 76" href="#">
 		<area title="joinEventDialogue" shape="rect" coords="20, 195, 105, 276" href="#">
 		<area title="upcomingEvents" shape="rect" coords="374, 47, 414, 80" href="#">
-		<area title="newmeetup" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="generalnewcoffee" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
+	</map>
+
+	<!-- map for girls lobby -->
+	<map name="girlsclublobby">
+		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
+		<area title="girlsclublobby-dropdown" shape="rect" coords="130, 50, 310, 76" href="#">
+		<area title="upcomingEvents" shape="rect" coords="374, 47, 414, 80" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
+	</map>
+
+	<map name="girlsclublobby-dropdown">
+		<area title="mainLobby" shape="rect" coords="121, 84, 311, 114" href="#"> 
+		<area title="girlsclublobby" shape="rect" coords="0, 0, 420, 750" href="#">
+	</map>
+
+	<map name="mainLobbyHighLighted">
+		<area title="mainMenu" shape="rect" coords="5, 35, 67, 90" href="#">
+		<area title="generalLobbyDropdown" shape="rect" coords="130, 50, 310, 76" href="#">
+		<!-- <area title="joinEventDialogue" shape="rect" coords="20, 195, 105, 276" href="#"> -->
+		<area title="upcomingEvents" shape="rect" coords="374, 47, 414, 80" href="#">
+		<area title="generalnewcoffee" shape="rect" coords="302, 106, 412, 141" href="#">
+		<area title="filter-expand" shape="rect" coords="0, 698, 420, 747" href="#">
+	</map>
+
+	<map name="generalLobbyDropdown">
+		<area title="girlsclublobby" shape="rect" coords="121, 84, 311, 114" href="#"> 
+		<area title="mainLobby" shape="rect" coords="0, 0, 420, 750" href="#">
 	</map>
 
 	<!-- map for mainMenu includes: outside of menu, Group, Account Settings, Help-->
 	<map name="mainMenu">
-		<area title="mainLobby" shape="rect" coords="338, 0, 421, 747" href="#">
-		<area title="searchGroups" shape="rect" coords="0, 100, 325, 173" href="#">
+		<area title="mygroups" shape="rect" coords="0, 100, 325, 173" href="#">
 		<area title="accountSettings" shape="rect" coords="0, 173, 325, 240" href="#">
 		<area title="meetupHistory" shape="rect" coords="0, 240, 325, 301" href="#">
 		<area title="loginPage" shape="rect" coords="0, 385, 325, 437" href="#">
+	</map>
+	
+	<!-- map for mainLobby when main menu is open - closes main menu -->
+	<map name="exitMainMenu">
+		<area title="returnToLobby" shape="rect" coords="324, 0, 421, 747" href="#">
 	</map>
 
 	<!-- map for joinEventDialogue includes: the X -->
@@ -63,18 +125,73 @@
 	<map name="searchGroups">
 		<area title="mainLobby" shape="rect" coords="7, 40, 35, 80" href="#">
 		<area title="createGroup" shape="rect" coords="375 42 415 82" href="#">
+		<area title="groupinfo" shape="rect" coords="20, 213, 398, 298" href="#">
+		<area title="mygroups" shape="rect" coords="332, 117, 362, 145" href="#">
+	</map>
+
+		<!-- map for searchGroups includes: back button, create button -->
+	<map name="mygroups">
+		<area title="mainLobby" shape="rect" coords="7, 40, 35, 80" href="#">
+		<area title="createGroup" shape="rect" coords="375 42 415 82" href="#">	
+		<area title="searchGroups" shape="rect" coords="332, 117, 362, 145" href="#">
 	</map>
 	
 	<!-- map for createGroup includes: back button, create button -->
 	<map name="createGroup">
 		<area title="searchGroups" shape="rect" coords="7, 40, 35, 80" href="#">
-		<area title="searchGroups" shape="rect" coords="250, 530, 392, 583" href="#">
+		<area title="mygroups" shape="rect" coords="312, 570, 392, 602" href="#">
+	</map>
+
+	<map name="groupinfo">
+		<area title="mainLobby" shape="rect" coords="7, 40, 35, 80" href="#">
+		<area title="createGroup" shape="rect" coords="375 42 415 82" href="#">
+		<area title="searchGroups" shape="rect" coords="348, 225, 392, 256" href="#">
+		<area title="mygroups" shape="rect" coords="332, 117, 362, 145" href="#">
+		<area title="girlsclublobby" shape="rect" coords="325, 326, 388, 357" href="#">
 	</map>
 
 	<!-- map for newmeetup includes: submit button and close button -->
-	<map name="newmeetup">
-		<area title="mainLobby" shape="rect" coords="7, 40, 35, 80" href="#">
-		<area title="mainLobby" shape="rect" coords="159, 612, 269, 655" href="#">
+	<map name="generalnewcoffee">
+		<area title="mainLobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="generalnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
+		<area title="generalnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="generalnewlunch">
+		<area title="mainLobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="generalnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="generalnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="generalnewbeer">
+		<area title="mainLobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="mainLobbyHighLighted" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="generalnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="generalnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
+	</map>
+
+	<!-- map for newmeetup in girls club includes: submit button and close button -->
+	<map name="girlsnewcoffee">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="girlsclublobby" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
+		<area title="girlsnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="girlsnewlunch">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="girlsclublobby" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="girlsnewbeer" shape="rect" coords="270, 238, 354, 324" href="#">
+	</map>
+	
+	<map name="girlsnewbeer">
+		<area title="girlsclublobby" shape="rect" coords="360, 110, 380, 135" href="#">
+		<area title="girlsclublobby" shape="rect" coords="159, 624, 269, 668" href="#">
+		<area title="girlsnewcoffee" shape="rect" coords="74, 238, 158, 324" href="#">
+		<area title="girlsnewlunch" shape="rect" coords="172, 238, 256, 324" href="#">
 	</map>
 	
 	<!-- map for accountsettings includes: save button and text areas -->
@@ -90,11 +207,58 @@
 
 	<!-- map for upcomingEventDetails includes: back button -->
 	<map name="upcomingEvents">
-		<area title="mainLobby" shape="rect" coords="0, 0, 88, 746" href="#">
+		<area title="upcoming-popup" shape="rect" coords="115, 125, 400, 215" href="#"> 
+		<area title="upcoming-popup-2" shape="rect" coords="115, 240, 400, 330" href="#">
+		<area title="upcoming-popup-3" shape="rect" coords="115, 354, 400, 445" href="#">
+	</map>
+	
+	<!-- map for mainLobby when upcoming events is open - closes upcoming events -->
+	<map name="exitUpcomingEvents">
+		<area title="returnToLobby" shape="rect" coords="0, 0, 88, 746" href="#">
 	</map>
 
 	<map name="register">
-		<area title="mainLobby" shape="rect" coords="56, 658, 174, 695" href="#">
+		<area title="loginPage" shape="rect" coords="57, 652, 162, 687" href="#">
+		<area title="mainLobby" shape="rect" coords="280, 652, 382, 687" href="#">
+	</map>
+	
+	<map name="upcoming-popup">
+		<area title="mainLobby" shape="rect" coords="372, 105, 394, 128" href="#">
+		<area title="upcoming-popup-2" shape="rect" coords="372, 335, 401, 453" href="#">
+		<!-- <area title="brokenlink" shape="rect" coords="20, 335, 46, 401" href="#"> -->
+		<area title="brokenlink" shape="rect" coords="78, 593, 188, 634" href="#">
+		<area title="chat" shape="rect" coords="234, 593, 344, 634" href="#">
+	</map>
+
+	<map name="chat">
+		<area title="mainLobby" shape="rect" coords="340, 130, 370, 160" href="#">
+	</map>
+	
+	<map name="upcoming-popup-2">
+		<area title="mainLobby" shape="rect" coords="372, 105, 394, 128" href="#">
+		<area title="upcoming-popup-3" shape="rect" coords="372, 335, 401, 453" href="#">
+		<area title="upcoming-popup" shape="rect" coords="20, 335, 51, 453" href="#">
+		<area title="brokenlink" shape="rect" coords="78, 593, 188, 634" href="#">
+		<area title="brokenlink" shape="rect" coords="234, 593, 344, 634" href="#">
+	</map>
+
+	<map name="upcoming-popup-3">
+		<area title="mainLobby" shape="rect" coords="372, 105, 394, 128" href="#">
+		<area title="upcoming-popup-2" shape="rect" coords="20, 335, 51, 453" href="#">
+		<area title="brokenlink" shape="rect" coords="161, 592, 271, 633" href="#">
+	</map>
+
+	<!-- map for filter includes:  -->
+	<map name="filter-expand">
+		<area title="mainLobbyWFilter" shape="rect" coords="0, 0, 420, 45" href="#">
+	</map>
+	<map name="exitFilter-expand">
+		<area title="mainLobbyWFilter" shape="rect" coords="0, 0, 420, 394" href="#">
+	</map>
+	<map name="filterActivityToggle">
+		<area title="all-pressed" shape="rect" coords="0, 0, 89, 34" href="#">
+		<area title="coffee-pressed" shape="rect" coords="89, 0, 178, 34" href="#">
+		<area title="lunch-pressed" shape="rect" coords="178, 0, 267, 34" href="#">	
 	</map>
 
 	<!-- debug delete this laterz -->

@@ -19,7 +19,6 @@ div#overlayImageBlockLeft img{
 	height: 747px;
 }
 
-
 #overlayImageBlockRight {
 	height: 747px;
 	position: relative;
@@ -31,6 +30,71 @@ div#overlayImageBlockLeft img{
 div#overlayImageBlockRight img{
 	height: 747px;
 }
+
+/** filter stuff*/
+#overlayImageBlockBottom {
+	position: absolute;
+	height: 354px;
+	top: 747px;
+	left: 0px;
+	width: 0px;
+	z-index: 1;
+}
+div#overlayImageBlockBottom img{
+	width: 420px;
+}
+
+#filter-content {
+	color: #6a6a6a;
+	font-family: "myriad pro";
+	font-size: 20px;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	margin: 30px;
+	width: 360px;
+}
+
+.filterLabel {
+	padding-bottom: 4px;
+	padding-top: 10px;
+}
+
+#activityToggle {
+	height: 40px;
+	width: 250px !important;
+}
+
+.filterDropBoxExtended {
+	display: none;
+}
+
+.filterDropBox {
+	background-color: #dedede;
+}
+
+.filterDropBox.topExtended {
+	color: #c0c0c0;
+	border-top: 1px solid
+}
+
+.filterDropBox.bottomExtended {
+	color: #c0c0c0;
+	padding-bottom: 6px;
+}
+
+.filterDropBox.extended {
+	padding-top: 11px;
+}
+
+.filterDropBox.compressed {
+	padding: 11px 11px 6px 11px;
+	background-image: url('http://i45.tinypic.com/309nb74.png'); 
+	background-repeat: no-repeat;
+	background-position: right 10px top 18px;
+}
+
+/** end of filter stuff*/
 
 div img{
 	height: 100%;
@@ -45,6 +109,7 @@ div img{
 
 /**this div hides the overflow on the right side of the window*/
 #hackHidingBlock {
+	border-left: 1px solid;
 	position: absolute;
 	width: 500px;
 	height: 750px;
@@ -53,6 +118,17 @@ div img{
 	background-color: white;
 	z-index: 1000;
 }
+#hackHidingBlock2 {
+	border-top: 1px solid;
+	position: absolute;
+	width: 420px;
+	height: 500px;
+	top: 747px;
+	left: 0px;
+	background-color: white;
+	z-index: 1000;
+}
+
 
 /**END OF THE HACKS**/
 
@@ -91,11 +167,12 @@ div#textAreas #groupName {
 }
 
 div#textAreas #groupDescription {
-	height: 30px;
+	height: 65px;
 	width: 370px;
 	font-size: 23px;
 	border: none;
-
+	font-family: "myriad pro";
+	
 	position: absolute;
 	left: 25px;
 	top: 255px;
@@ -170,5 +247,17 @@ div#textAreas #confirmNewPassword {
 	position: absolute;
 	left: 25px;
 	top: 420px;
+}
+
+div#textAreas #groupSearchBar {
+	height: 29px;
+	width: 250px;
+	font-size: 18px;
+	border: none;
+	padding: 5px;
+
+	position: absolute;
+	left: 78px;
+	top: 117px;
 }
 
