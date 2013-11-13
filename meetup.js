@@ -58,7 +58,7 @@ function setupPage(title) {
 			"<input type='password' id='registerPagePassword'>"+
 			"<input type='password' id='registerPageConfirmPassword'>");
 	} else if (title == "groupinfo" || title == "searchGroups" || title == "mygroups" || title == "joinedgirlsclub") {
-		value = (title != "mygroups") ? "value='girls'" : "";
+		value = (title != "mygroups" && title != "joinedgirlsclub") ? "value='girls'" : "";
 		$('#textAreas').html("<input id='groupSearchBar'" + 
 			value
 			+ "placeholder='Search for a group...'>");
